@@ -2,14 +2,14 @@ class App extends React.Component {
   constructor(props){
     // call the constructor of React.Component
     super(props);
-    console.log(props);
+    //console.log(props);
   }
   render() {
     return (
       <div>
         <Nav />
         <div className="col-md-7">
-          <VideoPlayer />
+          <VideoPlayer video={this.props.videos[0]}/>
         </div>
         <div className="col-md-5">
           <VideoList videos={this.props.videos}/>
