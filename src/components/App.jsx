@@ -1,20 +1,39 @@
 class App extends React.Component {
+
   constructor(props){
+     //console.log(props);
     // call the constructor of React.Component
     super(props);
-    //console.log(props);
+    //console.log(props.videos);
+    if (props.videos) {
+      this.state = {
+        videoList:this.props.videos,
+        currentVideo:this.props.videos[0]
+      };
+    // } else {
+    //   this.state = {
+    //     videoList: [],
+    //     currentVideo: {}
+    //   }
+    }
   }
+
+  onVideoItemClick(video) {
+
+    if (this.state) {
+      this.setState({currentVideo: video });
+    }
+  }
+
   render() {
     return (
       <div>
         <Nav />
         <div className="col-md-7">
-
-          <VideoPlayer video={this.props.videos[0]}/>
-
+          <VideoPlayer video={this.state.currentVideo}/>
         </div>
         <div className="col-md-5">
-          <VideoList videos={this.props.videos}/>
+          <VideoList onListClick={this.onVideoItemClick.bind(this)} videos={this.state.videoList}/>
         </div>
       </div>
     );
