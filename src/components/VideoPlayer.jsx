@@ -1,7 +1,8 @@
 var VideoPlayer = (props) => {
-  var currentVid = props.video.snippet;
+  var currentVid = (props.video.snippet) ? props.video.snippet : {};
   //{console.log(currentVid)};
-  var url = "https://www.youtube.com/embed/" + props.video.id.videoId;
+  var id = (props.video.id) ? props.video.id.videoId : "";
+  var url = "https://www.youtube.com/embed/" + id;
   //src={"https://www.youtube.com/embed/" + props.video.id.videoId}
   //{console.log(props.video)};
   return (<div className="video-player">

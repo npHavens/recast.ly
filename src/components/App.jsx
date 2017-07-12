@@ -1,25 +1,23 @@
 class App extends React.Component {
 
   constructor(props){
-     //console.log(props);
+    //console.log(props);
     // call the constructor of React.Component
     super(props);
-    //console.log(props.videos);
     if (props.videos) {
       this.state = {
         videoList:this.props.videos,
         currentVideo:this.props.videos[0]
       };
-    // } else {
-    //   this.state = {
-    //     videoList: [],
-    //     currentVideo: {}
-    //   }
+    } else {
+      this.state = {
+        videoList: [],
+        currentVideo: {}
+      };
     }
   }
 
   onVideoItemClick(video) {
-
     if (this.state) {
       this.setState({currentVideo: video });
     }

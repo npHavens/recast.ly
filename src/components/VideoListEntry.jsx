@@ -2,8 +2,8 @@ var VideoListEntry = (props) => {
   let vid = props.video.snippet;
   //console.log(vid);
   // let onVideoItemClick = (event) => {
-     //{console.log(props.onListClick)}
-  // }
+  //{console.log(props.onListClick)}
+  //}
   var onItemClick = (event) => {
     props.onListClick(props.video);
   };
