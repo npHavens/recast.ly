@@ -4,6 +4,9 @@ class App extends React.Component {
     //console.log(props);
     // call the constructor of React.Component
     super(props);
+
+    this.props.searchYouTube(this.props.options);
+
     if (props.videos) {
       this.state = {
         videoList:this.props.videos,
