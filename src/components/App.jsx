@@ -5,7 +5,6 @@ class App extends React.Component {
     // call the constructor of React.Component
     super(props);
 
-    this.props.searchYouTube(this.props.options);
 
     if (props.videos) {
       this.state = {
@@ -20,6 +19,10 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.result = this.props.searchYouTube(this.props.options,function(data){ return data;});
+    {console.log(this.result);}
+  }
   onVideoItemClick(video) {
     if (this.state) {
       this.setState({currentVideo: video });
